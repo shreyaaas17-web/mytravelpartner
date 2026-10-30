@@ -240,4 +240,5 @@ any error output from the terminal.
 
 Licensed under the **GNU General Public License v3.0**. See [LICENSE](LICENSE).
 #   m y t r a v e l p a r t n e r  
+ #   m y t r a v e l p a r t n e r  
  
