@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: travelbrain-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: AVIATIONSTACK_API_KEY
+        sync: false
+      - key: OPENWEATHER_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: travelbrain-db
+          property: connectionString
+      - key: CACHE_ENABLED
+        value: "false"
+      - key: RELOAD
+        value: "false"
+
+databases:
+  - name: travelbrain-db
+    plan: free
+    databaseName: travelbrain
+    user: travelbrain
